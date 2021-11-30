@@ -13,7 +13,9 @@
     <header></header>
     <main>
         <section>
-            <h2>Headings</h2>
+            <header>
+                <h2>Headings</h2>
+            </header>
             <h1>Heading level 1</h1>
             <h2>Heading level 2</h2>
             <h3>Heading level 3</h3>
@@ -22,7 +24,9 @@
             <h6>Heading level 6</h6>
         </section>
         <section>
-            <h2>Paragraph</h2>
+            <header>
+                <h2>Paragraph</h2>
+            </header>
             <h2>Heading with a subtitle</h2>
             <p>This is my subtitle</p>
             <p>
@@ -30,9 +34,11 @@
             </p>
         </section>
 
-        <!-- lists-->
+        <!-- Lists -->
         <section>
-            <h2>Lists</h2>
+            <header>
+                <h2>Lists</h2>
+            </header>
             <div>
                 <h3>Unordered</h3>
                 <ul>
@@ -60,7 +66,9 @@
 
         <!-- Horizontal rule -->
         <section>
-            <h2>Horizontal rule</h2>
+            <header>
+                <h2>Horizontal rule</h2>
+            </header>
             <div>
                 <hr>
             </div>
@@ -68,22 +76,28 @@
 
         <!-- Blockquotes -->
         <section>
-            <h2>Blockquotes</h2>
+            <header>
+                <h2>Blockquotes</h2>
+            </header>
             <div>
                 <h3>Inline quote</h3>
                 <q>Stay hungry. Stay foolish.</q>
             </div>
             <div>
                 <h3>Blockquote</h3>
-                <blockquote cite="Kanye West, Musician">
-                    I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at.
+                <blockquote>
+                    <p>I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at.
+                        <cite>Kanye West, Musician</cite>
+                    </p>
                 </blockquote>
             </div>
         </section>
 
         <!-- Typography -->
         <section>
-            <h2>Typography</h2>
+            <header>
+                <h2>Typography</h2>
+            </header>
             <div>
                 <address>
                     320 Stewart Avenue, Unit 12 <br>
@@ -107,35 +121,43 @@
 
         <!-- Table -->
         <section>
-            <h2>Table</h2>
+            <header>
+                <h2>Table</h2>
+            </header>
             <table>
                 <caption>Star Wars Trilogy Data</caption>
-                <tr>
-                    <th scope="col">Title</th>
-                    <th scope="col">Director</th>
-                    <th scope="col">Release Date</th>
-                </tr>
-                <tr>
-                    <th scope="row">Star Wars: Episode IV - A New hope</th>
-                    <td>George Lucas</td>
-                    <td>May 25th, 1997</td>
-                </tr>
-                <tr>
-                    <th scope="row">Star Wars: Episode V - The Empire Strikes Back</th>
-                    <td>Irvin Kershner</td>
-                    <td>May 21st, 1980</td>
-                </tr>
-                <tr>
-                    <th scope="row">Star Wars: Episode VI - Return of the Jedi</th>
-                    <td>Richard Marquand</td>
-                    <td>May 25th, 1983</td>
-                </tr>
+                <thead>
+                    <tr>
+                        <th scope="col">Title</th>
+                        <th scope="col">Director</th>
+                        <th scope="col">Release Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Star Wars: Episode IV - A New Hope</th>
+                        <td>George Lucas</td>
+                        <td>May 25th, 1997</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Star Wars: Episode V - The Empire Strikes Back</th>
+                        <td>Irvin Kershner</td>
+                        <td>May 21st, 1980</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Star Wars: Episode VI - Return of the Jedi</th>
+                        <td>Richard Marquand</td>
+                        <td>May 25th, 1983</td>
+                    </tr>
+                </tbody>
             </table>
         </section>
 
         <!-- Details -->
         <section>
-            <h2>Details</h2>
+            <header>
+                <h2>Details</h2>
+            </header>
             <div>
                 <h3>Default</h3>
                 <details>
