@@ -1,7 +1,7 @@
 @import "normalize.css";
 
 * {
-    box-sizing: inherit;
+    box-sizing: initial;
 }
 
 html {
