@@ -440,7 +440,7 @@ a:active {
     display: none;
 }
 
-.card-category, .section-tagline {
+.card-category {
     color: var(--color-primary);
 }
 
@@ -515,7 +515,7 @@ a:active {
 ul.row {
     margin: 0;
     padding: 0;
-    list-style-type: none;
+    list-style: none;
 }
 
 .col-1-3 {
