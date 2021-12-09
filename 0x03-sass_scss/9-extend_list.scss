@@ -1,18 +1,14 @@
 /* 9. Extended */
-%ext-font-size {
+.info {
   font-size: 12px;
 }
 
-.info {
-  @extend %ext-font-size;
-}
-
 .success {
-  @extend %ext-font-size;
+  @extend .info;
   color: #00FF00;
 }
 
 .warning {
-  @extend %ext-font-size;
+  @extend .info;
   color: #FF0000;
 }
