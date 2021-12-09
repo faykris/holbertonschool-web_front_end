@@ -1,0 +1,13 @@
+/* 13. Columns and operators */
+
+$col-1: 100%;
+$col-2: 50%;
+$col-3: 33.3333333333%;
+$col-4: 25%;
+$columns: $col-1, $col-2, $col-3, $col-4;
+
+@for $i from 1 through 4 {
+  .col-#{$i} {
+    width: nth($columns, $i);
+  }
+}
