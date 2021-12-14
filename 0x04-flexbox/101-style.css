@@ -1,3 +1,50 @@
 .container {
+    border: 1.5rem solid;
+    color: white;
     display: flex;
+    justify-content: center;
+    align-items: baseline;
+    height: 16rem;
+    font-size: 7.5rem;
+}
+
+.box {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.box1 {
+    background-color: rgb(31 205 108);;
+    width: 10%;
+    height: 35%;
+    font-size: 25%;
+}
+
+.box2 {
+    background-color: rgb(44 152 223);;
+    width: 15%;
+    height: 50%;
+    font-size: 50%;
+}
+
+.box3 {
+    background-color: rgb(52 74 97);
+    width: 25%;
+    height: 80%;
+    font-size: 100%;
+}
+
+.box4 {
+    background-color: rgb(159 84 185);
+    width: 15%;
+    height: 50%;
+    font-size: 50%;
+}
+
+.box5 {
+    background-color: rgb(233 125 12);
+    width: 10%;
+    height: 35%;
+    font-size: 25%;
 }
