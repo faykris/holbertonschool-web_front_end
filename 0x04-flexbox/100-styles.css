@@ -522,7 +522,7 @@
     z-index: -1;
   }
 
-  /*** ARTICLE PAGE ***/
+/*** ARTICLE PAGE ***/
 /* Section HERO (article)
     ============================= */
   .hero-article {
@@ -588,6 +588,7 @@
     color: var(--color-grey);
     text-align: center;
   }
+  
   /* Post Meta
     ============================= */
   .post-meta-list {
