@@ -25,7 +25,7 @@
                         $("<td></td>").text(lastName),
                         $("<td></td>").text("(X)").css("background-color", "orange")
                     )
-                )
+                );
             }
 
             createFamilyTree();
@@ -35,8 +35,8 @@
             addNewMember('Gerard', 'Snizt');
             addNewMember('Victor', 'Salva');
 
-            $("td").click(function () {
-                $("td").$(this).remove();
+            $("tbody").on("click", "tr td:contains('(X)')", function () {
+                $(this).closest('tr').remove();
             });
         });
 

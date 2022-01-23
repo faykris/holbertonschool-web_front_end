@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Task 11</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="application/javascript">
+        $.when($.ready).then(function () {
+            function addPostRow(data = {}) {
+                $("body").append(
+                    $("<p></p>").append(
+                        $("<span></span>").text(
+                            "Post created with id " + data.id + ", title: " + data.title + ", author: " + data.author)));
+            }
+            function listPosts() {
+                $.get("http://localhost:3000/posts", function (data, status) {
+                    if (status === 'success') {
+                        for (object of data) {
+                            addPostRow(object);
+                        }
+                    }
+                    else {
+                        alert("Server Error");
+                    }
+                });
+            }
+            function buildForm() {
+                $("body").append(
+                    $("<form></form>").append(
+                        $("<div></div>").append(
+                            $("<label for='author'></label>").text("Author"),
+                            $("<input id='author' type='text'>")
+                        ),
+                        $("<div></div>").append(
+                            $("<label for='title'></label>").text("Title"),
+                            $("<textarea id='title'>")
+                        )
+                    ));
+                $("div:nth-child(2)").after("<input type='submit'>");
+            }
+            function sendForm() {
+                $("body").append("About to send the query to the API");
+                let object = { author: $("input:text").val(), title: $("textarea").val() };
+
+                $.post("http://localhost:3000/posts", object, function (data, status) {
+                    if (status === 'success') {
+                        addPostRow(data);
+                    }
+                    else {
+                        alert("Error sending the POST query");
+                    }
+                });
+            }
+
+            listPosts();
+            buildForm();
+
+            $("input:submit").click(function () {
+                sendForm();
+            });
+        });
+
+        jQuery.readyException = function (error) {
+            console.error("jQuery has not been loaded correctly");
+        };
+
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

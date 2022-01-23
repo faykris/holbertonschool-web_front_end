@@ -25,10 +25,7 @@
                                 $("<td></td>").text("Antoine"), $("<td></td>").text("Salva")))));
             }
             function replaceFamilyTree() {
-
-                $($("tbody").html()).replaceWith($("<tr><td>Paulette</td><td>Salva</td></tr>"));
-                $("<tr><td>Paulette</td><td>Salva</td></tr>").replaceAll($("tbody"));
-
+                $("tbody").html("<tr><td>Paulette</td><td>Salva</td></tr>");
             }
             createFamilyTree();
             replaceFamilyTree();

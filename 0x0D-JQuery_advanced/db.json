@@ -1,0 +1,69 @@
+{
+    "posts": [
+        {
+            "id": 1,
+            "title": "json-server",
+            "author": "typicode"
+        },
+        {
+            "title": "100 years of solitude",
+            "author": "Gabriel Garcia Marquez",
+            "id": 2
+        },
+        {
+            "title": "The alchemist",
+            "author": "Paulo Coelho",
+            "id": 3
+        },
+        {
+            "title": "The little prince",
+            "author": "Antoine de Saint Exupery",
+            "id": 4
+        },
+        {
+            "title": "Attract woman through honesty",
+            "author": "Mark Manson",
+            "id": 5
+        },
+        {
+            "title": "Don Quijote de la mancha",
+            "author": "Miguel de Cervantes Saavedra",
+            "id": 6
+        },
+        {
+            "title": "The world and their demons",
+            "author": "Carl Sagan",
+            "id": 7
+        },
+        {
+            "title": "Cosmos",
+            "author": "Nell the Grasse Tyson",
+            "id": 8
+        },
+        {
+            "title": "The Theory of everything",
+            "author": "Sthephen Hawking",
+            "id": 9
+        },
+        {
+            "title": "The Dorian Gray portrait",
+            "author": "unknown",
+            "id": 10
+        },
+        {
+            "author": "Perpetuo Socorro",
+            "title": "The Lonely Man",
+            "id": 11
+        }
+    ],
+    "comments": [
+        {
+            "id": 1,
+            "body": "some comment",
+            "postId": 1
+        }
+    ],
+    "profile": {
+        "name": "typicode"
+    }
+}

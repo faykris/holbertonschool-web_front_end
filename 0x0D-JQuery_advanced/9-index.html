@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Task 9</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        .loading {
+            opacity: .2;
+        }
+    </style>
+    <script type="application/javascript">
+        $.when($.ready).then(function () {
+            function createSearchForm() {
+                $("body").append(
+                    $("<input type='text'>"),
+                    $("<input type='submit'>"),
+                    $("<ul></ul>"),
+                    $("<ul id='pagination'></ul>").css({ "display": "flex", "list-style": "none" })
+                );
+            }
+            function addNewArticle(id = '', title = '', snippet = '') {
+                $("ul").first().append(
+                    $("<li></li>").append(
+                        $("<p></p>").append(
+                            $("<span></span>").append(id, " - ", $("<b></b>").html(title)))),
+                    $("<p></p>").html(snippet));
+            }
+
+            function buildPagination(numberOfItems = 0, itemsPerPage = 0, currentOffset = 0) {
+                $("ul").empty();
+                let totalpages = numberOfItems / itemsPerPage;
+                for (let i = 1; i <= totalpages; i++) {
+                    if (currentOffset === i * 10) {
+                        $("#pagination").append($("<li></li>").css({ "cursor": "pointer", "margin-left": "10px" }).append($("<b></b>").text(i)));
+                    }
+                    else {
+                        $("#pagination").append($("<li></li>").css({ "cursor": "pointer", "margin-left": "10px" }).text(i));
+                    }
+                }
+
+            }
+
+            function displayLoading(loading) {
+                if (loading) {
+                    $("ul").first().wrap("<div class='loading'></div>")
+                }
+                else {
+                    $("ul").first().unwrap()
+                }
+            }
+
+            function queryWikipedia(search = '', offset = 0) {
+                var url = "https://en.wikipedia.org/w/api.php";
+                var params = {
+                    action: "query",
+                    list: "search",
+                    srsearch: search,
+                    format: "json",
+                    sroffset: offset
+                };
+                url = url + "?origin=*";
+                Object.keys(params).forEach(function (key) { url += "&" + key + "=" + params[key]; });
+                displayLoading(true);
+                fetch(url)
+                    .then(function (response) { return response.json(); })
+                    .then(function (response) {
+                        displayLoading(false);
+                        buildPagination(response.query.searchinfo.totalhits, 10, response.continue.sroffset);
+                        for (result of response.query.search) {
+                            addNewArticle(result.pageid, result.title, result.snippet);
+                        }
+                    })
+                    .catch(function (error) { console.log(error); });
+            }
+
+            createSearchForm();
+
+            $('#pagination').on("click", "li", function () {
+                queryWikipedia($("input:text").val(), ($(this).text() - 1) * 10);
+            });
+
+            $("input:submit").click(function () {
+                queryWikipedia($("input:text").val(), 0)
+            });
+        });
+
+        jQuery.readyException = function (error) {
+            console.error("jQuery has not been loaded correctly");
+        };
+
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
