@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2</title>
+</head>
+
+<body>
+<h1>Login to the website</h1>
+<form action="#" style="display: flex;">
+    <input type="text" name="firstname" id="firstname" style="margin-right: .5rem;">
+    <input type="text" name="email" id="email" style="margin-right: .5rem;">
+    <button onclick="setCookies()">Log me in</button>
+</form>
+
+<h2>Cookies</h2>
+<button onclick="showCookies()">Show the cookies</button>
+<script>
+    function setCookies() {
+        const fn_cookie = "firstname=" + document.getElementById('firstname').value;
+        const em_cookie = "email=" + document.getElementById('email').value;
+        const d = new Date();
+        const ex_days = 10;
+        d.setTime(d.getTime() + (ex_days*24*60*60*1000));
+        let expires = "expires="+ d.toUTCString();
+
+        document.cookie = fn_cookie;
+        document.cookie = em_cookie;
+        document.cookie = expires;
+    }
+    function showCookies() {
+        const element = document.createElement('p');
+
+        const firstName = getCookie('firstname');
+        const email = getCookie('email');
+
+        const pContent = `Email: ${email} - Firstname: ${firstName}`;
+
+        element.append(pContent);
+        document.body.append(element);
+    }
+    function getCookie(name) {
+        let cname = name + "=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(';');
+        for (let i = 0; i <ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) === ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) === 0) {
+                return c.substring(cname.length, c.length);
+            }
+        }
+        return "";
+    }
+</script>
+</body>
+
+</html>
